@@ -3,6 +3,7 @@ import jsonData from './data.json'; // assuming your JSON file is named data.jso
 import './App.css'
 import '@picocss/pico'
 import Likes from './components/Likes'
+import Cards from './components/Cards'
 
 
 
@@ -19,7 +20,7 @@ function App() {
     <hgroup>
       <h1>Keratin-filled Conical Creatures</h1>
 
-      
+      <Cards/>
        
         {data.map((item) => (
           <article>
