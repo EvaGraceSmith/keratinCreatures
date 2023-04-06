@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Likes from './Likes'
 
 export default () => {
     const [beasts, setBeasts] = useState([]);
@@ -20,13 +21,19 @@ export default () => {
             gap: '1rem',
             marginBottom: '1rem',
         }}>
-          {
-            beasts.map((beast) => (
-                <a key={beast.id} data-tooltip={beast.title}>
-                           <img key={beast._id} src={beast.image_url} alt={beast.title} /> 
-                </a>
-            ))
-          }
+            {
+                beasts.map((beast) => (
+                    <a key={beast.id} data-tooltip={beast.title}>
+                        <article>
+                            <img key={beast._id} src={beast.image_url} alt={beast.title} />
+                            <h2>{beast.title}</h2>
+                            <p>{beast.description}</p>
+                            <Likes />
+                        </article>
+                    </a>
+
+                ))
+            }
         </div>
     );
 };
