@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import jsonData from './data.json'; // assuming your JSON file is named data.json
 import './App.css'
-
+import '@picocss/pico'
 function App() {
   const [data, setData] = useState([]);
 
@@ -13,11 +13,16 @@ function App() {
     <hgroup>
       <h1>Keratin-filled Conical Creatures</h1>
 
-      <div>
-      {data.map((item) => (
+      
+       
+        {data.map((item) => (
+          <article>
         <img key={item._id} src={item.image_url} alt={item.title} />
+        </article>
       ))}
-    </div>
+        
+
+    
 
     </hgroup>
   )
