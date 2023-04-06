@@ -18,6 +18,9 @@ function App() {
         {data.map((item) => (
           <article>
         <img key={item._id} src={item.image_url} alt={item.title} />
+        <h2>{item.title}</h2>
+        <p>{item.description}</p>
+
         </article>
       ))}
         
