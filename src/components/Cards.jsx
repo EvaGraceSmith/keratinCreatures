@@ -16,13 +16,13 @@ export default () => {
     return (
         <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
             gap: '1rem',
             marginBottom: '1rem',
         }}>
           {
             beasts.map((beast) => (
-                <a key={beast.id} data-tooltip={beast.name}>
+                <a key={beast.id} data-tooltip={beast.title}>
                            <img key={beast._id} src={beast.image_url} alt={beast.title} /> 
                 </a>
             ))
