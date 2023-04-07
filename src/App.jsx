@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import jsonData from './data.json'; // assuming your JSON file is named data.json
 import './App.css'
 import '@picocss/pico'
-import Likes from './components/Likes'
 import Cards from './components/Cards'
 import Modals from './components/Modals'
 
