@@ -11,7 +11,7 @@ import Cards from './components/Cards'
 
 function App() {
   const [data, setData] = useState([]);
-
+let [beastInfo, setBeastInfo] = useState(null);
   useEffect(() => {
     setData(jsonData);
   }, []);
@@ -20,7 +20,25 @@ function App() {
     <hgroup>
       <h1>Keratin-filled Conical Creatures</h1>
 
-      <Cards/>
+      <Cards onChoice={(info) => { setBeastInfo(info)}}/>
+      {beastInfo && 
+<article>
+  <hgroup>
+    <div style={{
+      display: 'flex',
+      gap: '1rem',
+    }}>
+      <img style={{ width: '200px' }}
+      key={beastInfo._id} src={beastInfo.image_url} alt={beastInfo.title} />
+      <hgroup>
+        <h2>{beastInfo.title}</h2>
+        <p>{beastInfo.description}</p>
+      </hgroup>
+    </div>
+  </hgroup>
+
+</article>
+}
        
         {data.map((item) => (
           <article>

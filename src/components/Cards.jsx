@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Likes from './Likes'
 
-export default () => {
+export default ({onChoice}) => {
     const [beasts, setBeasts] = useState([]);
 
     async function fetchBeasts() {
@@ -23,7 +23,7 @@ export default () => {
         }}>
             {
                 beasts.map((beast) => (
-                    <a key={beast.id} data-tooltip={beast.title}>
+                    <a onClick={ () => {onChoice(beast)}}key={beast.id} data-tooltip={beast.title}>
                         <article>
                             <img key={beast._id} src={beast.image_url} alt={beast.title} />
                             <h2>{beast.title}</h2>

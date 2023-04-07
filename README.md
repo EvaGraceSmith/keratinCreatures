@@ -4,7 +4,7 @@
 **Version**: 1.0.0 
 
 ## Overview
-This is based off of a previous project I worked on called [Horned Beast](https://earnest-sunburst-144714.netlify.app) that I am redoing using JSX, Vite and Pico.
+This is based off of a previous project I worked on called [Horned Beast](https://earnest-sunburst-144714.netlify.app). I am redoing it using JSX, Vite and Pico.
 I wanted to refactor from React class-based components to the more modern function-based components, and this was a great opportunity for a fun side by side comparison. 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
