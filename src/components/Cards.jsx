@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Likes from './Likes'
 
+
 export default ({onChoice}) => {
     const [beasts, setBeasts] = useState([]);
 
