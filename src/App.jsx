@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,props } from 'react';
 import jsonData from './data.json'; // assuming your JSON file is named data.json
 import './App.css'
 import '@picocss/pico'
@@ -16,13 +16,25 @@ function App() {
   useEffect(() => {
     setData(jsonData);
   }, []);
+  const [numberofHorns, setnumberofHorns] = useState([]);
+  const handleDataChange = (newData) => {
+    console.log("handleDataChange ", newData);
+    setnumberofHorns(newData);
+
+    if (numberofHorns >0){
+      filteredData = beastInfo.filter((item) => item.horns === numberofHorns);}
+  }
+  let filteredData = beastInfo;
+  
+
+
 
   return (
     <hgroup>
       <h1>Keratin-filled Conical Creatures</h1>
-<Horns/>
+      <Horns setDataChange={handleDataChange}/>
       <Cards onChoice={(info) => { setBeastInfo(info) }} />
-      {beastInfo && <Modals beast={beastInfo} handleClose={() => { setBeastInfo(null) }} />}
+      {beastInfo && <Modals beast={filteredData} handleClose={() => { setBeastInfo(null) }} />}
 
 
 

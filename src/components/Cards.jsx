@@ -28,7 +28,6 @@ export default ({onChoice}) => {
                         <article>
                             <img key={beast._id} src={beast.image_url} alt={beast.title} />
                             <h2>{beast.title}</h2>
-                            <p>{beast.description}</p>
                             <Likes />
                         </article>
                     </a>

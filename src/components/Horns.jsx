@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, props } from 'react';
 import data from '../data.json';
+
 
 
 const HornedImages = () => {
@@ -7,9 +8,10 @@ const HornedImages = () => {
 
   const handleSelect = (event) => {
     setSelectedHornCount(parseInt(event.target.value));
-  };
+    console.log("selectedHornCount ", parseInt(event.target.value));
+    props.setDataChange(parseInt(event.target.value));
 
-  const filteredData = data.filter((item) => item.horns === selectedHornCount);
+  };
 
   return (
     <div>
@@ -22,16 +24,6 @@ const HornedImages = () => {
           <option value={3}>Three</option>
         </select>
       </label>
-      <div className="image-grid">
-        {filteredData.map((item) => (
-          <img
-            key={item._id}
-            src={item.image_url}
-            alt={item.title}
-            className="image-item"
-          />
-        ))}
-      </div>
     </div>
   );
 };
