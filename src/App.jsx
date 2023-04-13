@@ -1,4 +1,4 @@
-import React, { useState, useEffect,props } from 'react';
+import React, { useState, useEffect } from 'react';
 import jsonData from './data.json'; // assuming your JSON file is named data.json
 import './App.css'
 import '@picocss/pico'
@@ -30,11 +30,6 @@ function App() {
       <Horns onDataChange={handleDataChange}/>
       <Cards numberOfHornsRequested= {numberOfHornsRequested} onChoice={(info) => { setBeastInfo(info) }} />
       {beastInfo && <Modals beast={beastInfo} handleClose={() => { setBeastInfo(null) }} />}
-
-
-
-
-
 
     </hgroup>
   )
