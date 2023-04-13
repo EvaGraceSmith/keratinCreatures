@@ -20,7 +20,7 @@ function App() {
 
   const handleDataChange = (event) => {
     console.log("numberOfHorns", event.target.value);
-    setNumberofHornsRequested(event.target.value);
+    setNumberOfHornsRequested(event.target.value);
   }
 
 
