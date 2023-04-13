@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 export default () => {
   const [likes, setLikes] = useState(0);
+  beastId = beast._id;
 
   return (
     <div>
