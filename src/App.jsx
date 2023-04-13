@@ -8,33 +8,28 @@ import Modals from './components/Modals'
 import Horns from './components/Horns'
 
 
-
-
 function App() {
+  const [numberOfHornsRequested, setNumberOfHornsRequested] = useState(0);
+
   const [data, setData] = useState([]);
-  let [beastInfo, setBeastInfo] = useState(null);
+  const [beastInfo, setBeastInfo] = useState(null);
+
   useEffect(() => {
     setData(jsonData);
   }, []);
-  const [numberofHorns, setnumberofHorns] = useState([]);
-  const handleDataChange = (newData) => {
-    console.log("handleDataChange ", newData);
-    setnumberofHorns(newData);
 
-    if (numberofHorns >0){
-      filteredData = beastInfo.filter((item) => item.horns === numberofHorns);}
+  const handleDataChange = (event) => {
+    console.log("numberOfHorns", event.target.value);
+    setNumberofHornsRequested(event.target.value);
   }
-  let filteredData = beastInfo;
-  
-
 
 
   return (
     <hgroup>
       <h1>Keratin-filled Conical Creatures</h1>
-      <Horns setDataChange={handleDataChange}/>
-      <Cards onChoice={(info) => { setBeastInfo(info) }} />
-      {beastInfo && <Modals beast={filteredData} handleClose={() => { setBeastInfo(null) }} />}
+      <Horns onDataChange={handleDataChange}/>
+      <Cards numberOfHornsRequested= {numberOfHornsRequested} onChoice={(info) => { setBeastInfo(info) }} />
+      {beastInfo && <Modals beast={beastInfo} handleClose={() => { setBeastInfo(null) }} />}
 
 
 
