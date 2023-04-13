@@ -4,7 +4,6 @@ import './App.css'
 import '@picocss/pico'
 import Cards from './components/Cards'
 import Modals from './components/Modals'
-// import Search from './components/Search'
 import Horns from './components/Horns'
 
 
@@ -27,7 +26,7 @@ function App() {
   return (
     <hgroup>
       <h1>Keratin-filled Conical Creatures</h1>
-      <Horns onDataChange={handleDataChange}/>
+      <Horns setDataChange={handleDataChange}/>
       <Cards numberOfHornsRequested= {numberOfHornsRequested} onChoice={(info) => { setBeastInfo(info) }} />
       {beastInfo && <Modals beast={beastInfo} handleClose={() => { setBeastInfo(null) }} />}
 
