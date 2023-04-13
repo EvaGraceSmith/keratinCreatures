@@ -4,20 +4,13 @@ import data from '../data.json';
 
 
 const HornedImages = ({ setDataChange}) => {
-  const [selectedHornCount, setSelectedHornCount] = useState(0);
 
-  const handleSelect = (event) => {
-    setSelectedHornCount(parseInt(event.target.value));
-    setDataChange(parseInt(event.target.value));
-  };
-
-  const filteredData = data.filter((item) => item.horns === selectedHornCount);
 
   return (
     <div>
       <label>
         Select Horn Count:
-        <select onChange={handleSelect}>
+        <select onChange={setDataChange}>
           <option value={0}>All</option>
           <option value={1}>One</option>
           <option value={2}>Two</option>

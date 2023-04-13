@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Likes from './Likes'
 
 
-export default ({onChoice}) => {
+export default ({onChoice, numberOfHornsRequested}) => {
     const [beasts, setBeasts] = useState([]);
 
     async function fetchBeasts() {
@@ -23,7 +23,8 @@ export default ({onChoice}) => {
             marginBottom: '1rem',
         }}>
             {
-                beasts.map((beast) => (
+                beasts.filter((item)=> numberOfHornsRequested == 0 || item.horns == numberOfHornsRequested)
+                .map((beast) => (
                     <a onClick={ () => {onChoice(beast)}}key={beast.id} data-tooltip={beast.title}>
                         <article>
                             <img key={beast._id} src={beast.image_url} alt={beast.title} />
